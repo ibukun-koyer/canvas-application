@@ -5,13 +5,26 @@ body {
   background-color: var(--dark-mode-bkg-color);
   color: var(--dark-mode-color);
 }
-#canvas {
-  background-color: var(--canvas-bkg-color);
-}
+
 .contain-inputs {
   margin-top: 1rem;
   font-size: 1.5rem;
 }
 input {
   margin-right: 2rem;
+}
+#contain-canvas {
+  width: var(--canvas-container-width);
+  height: calc(var(--aspect-ratio) * var(--canvas-container-width));
+  background-color: var(--canvas-bkg-color);
+}
+.center-horizontally {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.center-vertically {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }

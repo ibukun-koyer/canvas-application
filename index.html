@@ -17,14 +17,20 @@
       when we are sure that the canvas works, we start designing the actual ui
     </h3>
 
-    <canvas id="canvas" width="500" height="500"></canvas>
+    <div class="center-horizontally">
+      <div
+        id="contain-canvas"
+        class="center-horizontally center-vertically"
+      ></div>
+    </div>
+
     <div class="contain-inputs">
       <label>color: </label><input type="color" class="stroke_color_input" />
       <label>width: </label
       ><input type="range" min="1" max="10" value="1" class="stroke-width" />
     </div>
 
-    <script src="./koyer's component/canvas_base_function.js"></script>
-    <script src="run_all_components.js"></script>
+    <script src="./js/canvas_base_function.js"></script>
+    <script src="./js/run_all_components.js"></script>
   </body>
 </html>

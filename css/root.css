@@ -2,4 +2,6 @@
   --dark-mode-bkg-color: rgb(74, 74, 74);
   --canvas-bkg-color: white;
   --dark-mode-color: white;
+  --canvas-container-width: 70vmax;
+  --aspect-ratio: 9/16;
 }
