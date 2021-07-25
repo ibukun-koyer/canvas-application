@@ -1,5 +1,4 @@
 //a class that stores the canvas current setting and allows you to change canvas settings.
-
 class canvas_settings {
   constructor(context) {
     this.context = context;
@@ -9,10 +8,6 @@ class canvas_settings {
     this.context.strokeStyle = "black";
     this.isDrawing = false;
     this.type_Of_draw = "stroke_line";
-  }
-  //update a particular canvas settings.
-  updateSettings(key, newValue) {
-    this[key] = newValue;
   }
 }
 //this is the canvas object that keeps track of the action of the canvas obj
@@ -24,7 +19,9 @@ class canvas_object {
   //initialize draw based on selected draw method
   beginDraw(x, y) {
     this.canvas_settings.isDrawing = true;
+
     if (this.canvas_settings.type_Of_draw === "stroke_line") {
+      this.context.beginPath();
       this.context.moveTo(x, y);
     }
     // this.context.
@@ -40,6 +37,7 @@ class canvas_object {
   }
   //end drawing
   endDraw() {
+    this.context.closePath();
     this.canvas_settings.isDrawing = false;
   }
 }
@@ -56,5 +54,11 @@ function canvas_base_functionality() {
   });
   canvas.addEventListener("mouseup", (e) => {
     canvas_interaction.endDraw();
+  });
+
+  //getting all inputs
+  const color_input = document.querySelector(".stroke_color_input");
+  color_input.addEventListener("change", () => {
+    canvas_interaction.canvas_settings.context.strokeStyle = color_input.value;
   });
 }
