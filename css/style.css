@@ -1,0 +1,9 @@
+body {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: var(--dark-mode-bkg-color);
+}
+#canvas {
+  background-color: var(--canvas-bkg-color);
+}
