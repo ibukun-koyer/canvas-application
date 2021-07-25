@@ -4,6 +4,8 @@ body {
   list-style: none;
   background-color: var(--dark-mode-bkg-color);
   color: var(--dark-mode-color);
+  margin: 2rem;
+  box-sizing: border-box;
 }
 
 .contain-inputs {
