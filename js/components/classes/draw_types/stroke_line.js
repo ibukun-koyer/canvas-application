@@ -5,6 +5,8 @@ class stroke_line {
         new savePoints({
           line_width: self.canvas_settings.context.lineWidth,
           line_color: self.canvas_settings.context.strokeStyle,
+          canvas_width: self.canvas.width,
+          canvas_height: self.canvas.height,
         })
       );
       self.canvas_settings.currentSaveSpot += 1;
@@ -35,8 +37,10 @@ class stroke_line {
         self.context.strokeStyle = savePoint.pathSettings.line_color;
         self.context.lineWidth = savePoint.pathSettings.line_width;
         let i = 0;
-        let widthRatio = self.canvas.width / self.canvas_settings.prevWidth;
-        let heightRatio = self.canvas.height / self.canvas_settings.prevHeight;
+        let widthRatio =
+          self.canvas.width / savePoint.pathSettings.canvas_width;
+        let heightRatio =
+          self.canvas.height / savePoint.pathSettings.canvas_height;
 
         for (let path of savePoint.path) {
           if (i === 0) {
