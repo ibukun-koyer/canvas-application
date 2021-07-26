@@ -37,13 +37,7 @@ class stroke_line {
         let i = 0;
         let widthRatio = self.canvas.width / self.canvas_settings.prevWidth;
         let heightRatio = self.canvas.height / self.canvas_settings.prevHeight;
-        console.log(widthRatio, heightRatio);
-        console.log(
-          self.canvas_settings.prevWidth,
-          self.canvas_settings.prevHeight,
-          self.canvas.width,
-          self.canvas.height
-        );
+
         for (let path of savePoint.path) {
           if (i === 0) {
             self.context.moveTo(path[0] * widthRatio, path[1] * heightRatio);

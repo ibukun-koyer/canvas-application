@@ -59,4 +59,18 @@ class canvas_object {
       new stroke_line().resize(this);
     });
   }
+  transform() {
+    const transform_outline = document.createElement("div");
+    transform_outline.classList.add("transform_outline");
+    this.canvas.insertAdjacentElement("afterend", transform_outline);
+    console.log(this.canvas_settings.minYBoundary);
+    transform_outline.style.top = `${this.canvas_settings.minYBoundary}px`;
+    transform_outline.style.left = `${this.canvas_settings.minXBoundary}px`;
+    transform_outline.style.width = `${
+      this.canvas_settings.maxXBoundary - this.canvas_settings.minXBoundary
+    }px`;
+    transform_outline.style.height = `${
+      this.canvas_settings.maxYBoundary - this.canvas_settings.minYBoundary
+    }px`;
+  }
 }

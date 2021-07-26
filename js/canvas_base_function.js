@@ -12,4 +12,10 @@ function canvas_base_functionality() {
   lineWidth.addEventListener("change", () => {
     canvas_interaction.canvas_settings.context.lineWidth = lineWidth.value;
   });
+  //-->getting click notice
+  const transform = document.querySelector(".transform");
+  transform.addEventListener("click", () => {
+    // canvas_interaction.canvas_settings.context.lineWidth = lineWidth.value;
+    canvas_interaction.transform();
+  });
 }

@@ -19,6 +19,7 @@ input {
   width: var(--canvas-container-width);
   height: calc(var(--aspect-ratio) * var(--canvas-container-width));
   background-color: var(--canvas-bkg-color);
+  position: relative;
 }
 .center-horizontally {
   width: 100%;
@@ -29,4 +30,8 @@ input {
   width: 100%;
   display: flex;
   align-items: center;
+}
+.transform_outline {
+  position: absolute;
+  border: 1px solid black;
 }
