@@ -39,7 +39,6 @@ class canvas_object {
   //end drawing
   endDraw() {
     console.log(this.canvas_settings);
-    // this.context.closePath();
     this.canvas_settings.isDrawing = false;
   }
   transform() {
@@ -47,7 +46,12 @@ class canvas_object {
     this.canvas_settings.show_transform_outline =
       !this.canvas_settings.show_transform_outline;
   }
-
+  refresh_transform() {
+    if (this.canvas_settings.show_transform_outline) {
+      this.transform();
+      this.transform();
+    }
+  }
   //create event listers for this canvas
   eventListenrs() {
     //-->on draw start

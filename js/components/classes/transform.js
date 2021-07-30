@@ -15,6 +15,7 @@ class transform {
       }px`;
     }
   }
+
   //create transform outline, and implement tranformation functionalities
   transform(canvas) {
     if (this.canvas_settings.show_transform_outline) {
@@ -33,6 +34,7 @@ class transform {
       for (let i = 0; i < 8; i++) {
         const transformEdge = document.createElement("div");
         transformEdge.classList.add("transformEdge");
+        transformEdge.classList.add("turn-off-drag");
         const edgeSize = getCssVariable("edge-size");
         const pos = `${(edgeSize / 2) * -1}px`;
         const one_dir_pos = "calc((100% - var(--edge-size)) / 2)";
@@ -73,15 +75,12 @@ class transform {
       rotate_icon.classList.add("fa-repeat");
       rotate_icon.setAttribute("aria-hidden", "true");
       rotate_icon.classList.add("rotate-icon");
-      //   rotate_icon.setAttribute("draggable", "false");
-      rotate_icon.addEventListener("dragStart", () => {
-        // rotate_icon.style.cursor = "pointer";
-        return false;
-      });
-
+      rotate_icon.classList.add("turn-off-drag");
       const locations = this.canvas_settings.transform_origin.split(" ");
       const rotate_icon_size = getCssVariable("rotate-size") + "rem";
       let rotate_offset = "1.2rem";
+
+      console.log(locations);
       if (locations[0] === "center") {
         rotate_icon.style.left = `calc((100% - ${rotate_icon_size}) / 2)`;
       }

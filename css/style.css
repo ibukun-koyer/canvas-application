@@ -54,4 +54,13 @@ input {
   font-size: var(--rotate-size) !important;
   color: var(--rotate-icon-color);
   z-index: 5;
+  text-shadow: 0rem 0rem 0.2rem rgba(255, 255, 255, 0.8);
+}
+
+.turn-off-drag {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }

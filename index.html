@@ -21,6 +21,44 @@
       when we are sure that the canvas works, we start designing the actual ui
     </h3>
 
+    <div class="contain-inputs">
+      <label>color: </label><input type="color" class="stroke_color_input" />
+      <label>width: </label
+      ><input type="range" min="1" max="10" value="1" class="stroke-width" />
+      <label>Transform: </label><button class="transform">Transform</button>
+
+      <div>
+        <label>Rotate x-origin: </label>
+        <div>
+          <input type="radio" name="x-origin" class="x-origin" checked />
+          <label>begin</label>
+        </div>
+        <div>
+          <input type="radio" name="x-origin" class="x-origin" />
+          <label>center</label>
+        </div>
+        <div>
+          <input type="radio" name="x-origin" class="x-origin" />
+          <label>end</label>
+        </div>
+      </div>
+      <label>Rotate y-origin: </label>
+      <div>
+        <div>
+          <input type="radio" name="y-origin" class="y-origin" checked />
+          <label>begin</label>
+        </div>
+        <div>
+          <input type="radio" name="y-origin" class="y-origin" />
+          <label>center</label>
+        </div>
+        <div>
+          <input type="radio" name="y-origin" class="y-origin" />
+          <label>end</label>
+        </div>
+      </div>
+    </div>
+
     <div class="center-horizontally">
       <div
         id="contain-canvas"
@@ -28,12 +66,6 @@
       ></div>
     </div>
 
-    <div class="contain-inputs">
-      <label>color: </label><input type="color" class="stroke_color_input" />
-      <label>width: </label
-      ><input type="range" min="1" max="10" value="1" class="stroke-width" />
-      <label>Transform: </label><button class="transform">Transform</button>
-    </div>
     <!--  -->
     <!-- GLOBAL VARIABLES -->
     <!--  -->
