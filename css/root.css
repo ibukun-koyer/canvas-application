@@ -4,4 +4,10 @@
   --dark-mode-color: white;
   --canvas-container-width: 70vmax;
   --aspect-ratio: 9/16;
+  --transform-dash-color: 1px solid black;
+  --edge-bkg-color: tranparent;
+  --edge-border: 1px solid black;
+  --edge-size: 10px;
+  --rotate-size: 1.2rem;
+  --rotate-icon-color: rgb(74, 74, 74);
 }

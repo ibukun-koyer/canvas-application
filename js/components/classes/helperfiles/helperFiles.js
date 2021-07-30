@@ -67,3 +67,8 @@ function setFitParent(self) {
     window.getComputedStyle(self.parentElement).height
   );
 }
+const getCssVariable = (variable) => {
+  return parseInt(
+    window.getComputedStyle(document.body).getPropertyValue("--" + variable)
+  );
+};

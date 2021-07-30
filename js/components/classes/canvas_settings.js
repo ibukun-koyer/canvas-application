@@ -16,5 +16,7 @@ class canvas_settings {
     this.minYBoundary = null;
     this.maxYBoundary = null;
     this.savePoints = [];
+    this.show_transform_outline = false;
+    this.transform_origin = "begin begin";
   }
 }

@@ -33,5 +33,25 @@ input {
 }
 .transform_outline {
   position: absolute;
-  border: 1px dashed black;
+  border: var(--transform-dash-color);
+  cursor: move;
+}
+.transformEdge {
+  position: absolute;
+  width: var(--edge-size);
+  height: var(--edge-size);
+
+  background: var(--edge-bkg-color);
+  border: var(--edge-border);
+}
+.wrapEdges {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.rotate-icon {
+  position: absolute;
+  font-size: var(--rotate-size) !important;
+  color: var(--rotate-icon-color);
+  z-index: 5;
 }

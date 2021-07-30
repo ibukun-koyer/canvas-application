@@ -8,7 +8,8 @@ class canvas_object {
     this.canvas_settings = new canvas_settings(this.context);
     this.canvas_settings.prevWidth = this.canvas.width;
     this.canvas_settings.prevHeight = this.canvas.height;
-    this.transform_element = null;
+    // this.transform_element = null;
+    this.transform_object = new transform(this.canvas_settings);
     this.eventListenrs();
   }
   //set canvas size to the parent size
@@ -41,27 +42,12 @@ class canvas_object {
     // this.context.closePath();
     this.canvas_settings.isDrawing = false;
   }
-  //resize the transform outline
-  resize_outline() {
-    if (this.transform_element) {
-      this.transform_element.style.top = `${this.canvas_settings.minYBoundary}px`;
-      this.transform_element.style.left = `${this.canvas_settings.minXBoundary}px`;
-      this.transform_element.style.width = `${
-        this.canvas_settings.maxXBoundary - this.canvas_settings.minXBoundary
-      }px`;
-      this.transform_element.style.height = `${
-        this.canvas_settings.maxYBoundary - this.canvas_settings.minYBoundary
-      }px`;
-    }
-  }
-  //create transform outline, and implement tranformation functionalities
   transform() {
-    const transform_outline = document.createElement("div");
-    transform_outline.classList.add("transform_outline");
-    this.canvas.insertAdjacentElement("afterend", transform_outline);
-    this.transform_element = transform_outline;
-    this.resize_outline();
+    this.transform_object.transform(this.canvas);
+    this.canvas_settings.show_transform_outline =
+      !this.canvas_settings.show_transform_outline;
   }
+
   //create event listers for this canvas
   eventListenrs() {
     //-->on draw start
@@ -91,7 +77,7 @@ class canvas_object {
       this.canvas_settings.prevHeight = this.canvas.height;
       this.canvas_settings.prevWidth = this.canvas.width;
 
-      this.resize_outline();
+      this.transform_object.resize_outline();
 
       new stroke_line().resize(this);
     });
